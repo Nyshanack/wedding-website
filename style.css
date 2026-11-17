@@ -1,0 +1,1414 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@400;500&display=swap');
+
+:root {
+  --burgundy: #43000f;
+  --deep-burgundy: #290008;
+  --gold: #d6b77c;
+  --cream: #fff6e9;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--burgundy);
+  color: var(--cream);
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+}
+
+body.locked {
+  overflow: hidden;
+}
+
+/* Opening cover */
+
+.cover {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--burgundy);
+  transition: opacity 1.2s ease, visibility 1.2s;
+}
+
+.cover.opened {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+
+.cover-inner {
+  position: relative;
+  width: 50%;
+  height: 50dvh;
+}
+
+.cover-image {
+  width: 50%;
+  height: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+.ring-button {
+  position: absolute;
+  left: 50%;
+  bottom: 12%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 60px;
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.ring-image {
+  display: block;
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+}
+
+.tap-text {
+  position: absolute;
+  left: 50%;
+  bottom: 7%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 10px;
+  letter-spacing: 3px;
+  white-space: nowrap;
+}
+
+/* Main sections */
+
+.section {
+  min-height: 100svh;
+  padding: 90px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.hero {
+  background:
+    radial-gradient(ellipse at center, #75162d 0%, #43000f 58%, #290008 100%);
+}
+
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: var(--gold);
+  line-height: 1.8;
+}
+
+.names {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(65px, 15vw, 110px);
+  line-height: 0.95;
+  margin: 35px 0;
+}
+
+.names span {
+  display: block;
+  font-size: 0.6em;
+  font-style: italic;
+  color: var(--gold);
+  margin: 14px 0;
+}
+
+.hero-date {
+  color: var(--gold);
+  letter-spacing: 4px;
+  font-size: 12px;
+}
+
+.scroll-hint {
+  position: absolute;
+  bottom: 35px;
+  font-size: 9px;
+  letter-spacing: 2px;
+  opacity: 0.75;
+}
+
+h2 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(45px, 10vw, 75px);
+  font-weight: 400;
+  margin: 20px 0 30px;
+}
+
+.message-section {
+  background: var(--cream);
+  color: var(--burgundy);
+}
+
+.message-section .eyebrow {
+  color: #a17b47;
+}
+
+.ornament {
+  color: #b78f53;
+  font-size: 34px;
+  margin-bottom: 25px;
+}
+
+.body-copy {
+  max-width: 360px;
+  font-size: 14px;
+  line-height: 2.2;
+}
+
+.date-section {
+  background: linear-gradient(150deg, #35000c, #73152b, #35000c);
+}
+
+.large-day {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(160px, 40vw, 260px);
+  line-height: 1;
+  color: var(--gold);
+  font-weight: 400;
+}
+
+.month {
+  font-size: 17px;
+  letter-spacing: 5px;
+  margin: 20px 0;
+}
+
+.weekday {
+  font-size: 12px;
+  letter-spacing: 4px;
+  color: var(--gold);
+}
+
+.countdown-section {
+  background: var(--cream);
+  color: var(--burgundy);
+}
+
+.countdown-section .eyebrow {
+  color: #a17b47;
+}
+
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.countdown div {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px 4px;
+  border: 1px solid #d8c3a8;
+}
+
+.countdown strong {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(28px, 7vw, 45px);
+  font-weight: 500;
+}
+
+.countdown span {
+  font-size: 8px;
+  letter-spacing: 1px;
+}
+
+.event-section {
+  background: var(--deep-burgundy);
+}
+
+.event-note {
+  color: var(--gold);
+  font-size: 12px;
+  line-height: 2;
+  margin-top: 25px;
+  max-width: 300px;
+}
+
+.footer {
+  padding: 50px 20px;
+  text-align: center;
+  background: #1e0006;
+}
+
+.footer p {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 26px;
+  letter-spacing: 2px;
+}
+
+.footer span {
+  color: var(--gold);
+}
+
+.footer small {
+  display: block;
+  margin-top: 12px;
+  color: var(--gold);
+  letter-spacing: 3px;
+}
+
+/* Scroll animations */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* FIX FULL-SCREEN WEDDING COVER */
+
+.cover {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #43000f;
+}
+
+.cover-inner {
+  position: relative;
+  width: 100vw;
+  height: 100dvh;
+  max-width: none;
+  aspect-ratio: auto;
+}
+
+.cover-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* FIX RING SIZE AND POSITION */
+
+.ring-button {
+  position: absolute;
+  left: 50%;
+  bottom: 12%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 60px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.ring-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* TAP TO OPEN */
+
+.tap-text {
+  position: absolute;
+  left: 50%;
+  bottom: 7%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 10px;
+  letter-spacing: 3px;
+  white-space: nowrap;
+  z-index: 6;
+}
+
+/* Full-screen cover without cropping the design */
+
+.cover {
+  background: #43000f;
+}
+
+.cover-inner {
+  position: relative;
+  width: 100%;
+  height: 100dvh;
+}
+
+.cover-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.cover {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  isolation: isolate;
+  background: #43000f;
+}
+
+.cover::before {
+  content: "";
+  position: absolute;
+  inset: -30px;
+  background-image: url("Images/wedding-cover.png");
+  background-size: cover;
+  background-position: center;
+  filter: blur(35px) brightness(0.55);
+  z-index: -1;
+}
+
+/* Elegant English calligraphy */
+
+.intro-names h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(65px, 13vw, 105px);
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.35;
+  color: #655454;
+}
+
+/* Arabic calligraphy */
+
+.intro-monogram {
+  font-family: 'Amiri', serif;
+  font-size: 65px;
+  font-weight: 400;
+  color: #b8a4a4;
+  direction: rtl;
+  margin-bottom: 45px;
+}
+
+/* Elegant ampersand */
+
+.intro-names span {
+  font-family: 'Great Vibes', cursive;
+  font-size: 40px;
+  color: #bd9f9f;
+  margin: 5px 0;
+}
+
+/* NEW SECOND PAGE */
+
+.hero.invitation-intro {
+  background: #fffefd;
+  color: #5d4c4c;
+  width: 100%;
+  min-height: 100svh;
+  padding: 70px 20px;
+}
+
+.intro-monogram {
+  font-family: 'Amiri', serif;
+  font-size: 70px;
+  color: #b9a8a8;
+  margin-bottom: 35px;
+}
+
+.intro-names {
+  text-align: center;
+}
+
+.intro-names h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(65px, 12vw, 110px);
+  font-weight: 400;
+  line-height: 1.4;
+  color: #655454;
+}
+
+.intro-names span {
+  display: block;
+  font-family: 'Great Vibes', cursive;
+  font-size: 35px;
+  color: #b9a8a8;
+}
+
+.intro-date {
+  font-size: 11px;
+  letter-spacing: 4px;
+  margin-top: 35px;
+  color: #a48d8d;
+}
+
+.intro-scroll {
+  position: absolute;
+  bottom: 30px;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: #b49a9a;
+}
+
+.intro-quote {
+  max-width: 450px;
+  margin: 25px auto;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(19px, 4vw, 27px);
+  font-style: italic;
+  line-height: 1.5;
+  text-align: center;
+  color: #8b4c39;
+}
+
+.gold-divider {
+  color: #c79548;
+  font-size: 22px;
+  margin: 5px 0;
+}
+
+.hero.invitation-intro .intro-monogram {
+  color: #b77a35;
+  background: linear-gradient(
+    120deg,
+    #713b20,
+    #e7b967,
+    #fff1bf,
+    #a25b2e,
+    #e7b967
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 3px rgba(126, 70, 25, 0.3));
+  font-size: 90px;
+  letter-spacing: -15px;
+}
+
+
+/* SECOND PAGE FLORAL BACKGROUND */
+
+.hero.invitation-intro::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("Images/wedding-cover.png");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+.hero.invitation-intro > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* SECOND PAGE - EXACT IMAGE DESIGN */
+
+.hero.invitation-intro {
+  width: 100%;
+  min-height: 100svh;
+  padding: 0;
+  margin: 0;
+  background: #43000f;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero.invitation-intro::before {
+  content: none;
+}
+
+.second-page-image {
+  display: block;
+  width: 100%;
+  height: 100svh;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* SCRATCH AND REVEAL PAGE */
+
+.scratch-section {
+  background: #fff8ef;
+  color: #5b1427;
+  min-height: 100svh;
+  padding: 70px 20px;
+}
+
+.scratch-section .eyebrow {
+  color: #aa8559;
+}
+
+.scratch-section h2 {
+  margin: 20px 0 10px;
+}
+
+.scratch-instruction {
+  color: #8b6d61;
+  font-size: 13px;
+  line-height: 1.8;
+  margin-bottom: 45px;
+}
+
+.scratch-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  width: 100%;
+  max-width: 480px;
+}
+
+.scratch-card {
+  position: relative;
+  height: 175px;
+  border-radius: 9px;
+  overflow: hidden;
+  border: 2px solid #c9a76a;
+  box-shadow: 0 8px 24px rgba(70, 10, 25, 0.12);
+}
+
+.scratch-answer {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #fffdf9;
+  color: #5b1427;
+  gap: 12px;
+}
+
+.scratch-answer strong {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(28px, 6vw, 58px);
+  font-weight: 500;
+}
+
+.scratch-answer span {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #a98759;
+}
+
+.scratch-canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+  cursor: crosshair;
+}
+
+.scratch-footer {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: 30px;
+  margin-top: 60px;
+  color: #6b3a45;
+}
+
+@media (max-width: 480px) {
+  .scratch-card {
+    height: 145px;
+  }
+
+  .scratch-grid {
+    gap: 8px;
+  }
+
+  .scratch-footer {
+    font-size: 26px;
+  }
+}
+
+
+/* TAP TO OPEN */
+
+.invitation-cover.opened,
+#cover.opened {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* SCRATCH CARDS */
+
+.scratch-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.scratch-canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+  cursor: crosshair;
+}
+
+/* Wedding photo inside scratch cards */
+
+.scratch-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  background-image: url("Images/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Scratch layer above the photo */
+
+.scratch-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  touch-action: none;
+  cursor: crosshair;
+}
+
+/* ===== COUNTING DOWN SECTION ===== */
+
+.wedding-countdown {
+  background: #fff5f2;
+  padding: 85px 18px 110px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.wedding-countdown h2 {
+  font-family: Georgia, serif;
+  font-size: clamp(30px, 6vw, 48px);
+  font-weight: normal;
+  color: #872640;
+  margin: 0 0 35px;
+}
+
+/* Countdown timer */
+
+.countdown-timer {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  max-width: 650px;
+  margin: 0 auto 75px;
+}
+
+.countdown-box {
+  background: rgba(255,255,255,0.8);
+  border: 2px solid #e9cbd1;
+  border-radius: 14px;
+  padding: 22px 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.countdown-box strong {
+  font-family: Georgia, serif;
+  font-size: clamp(25px, 5vw, 42px);
+  font-weight: normal;
+  color: #872640;
+}
+
+.countdown-box span {
+  font-size: clamp(9px, 2vw, 14px);
+  letter-spacing: 1px;
+  color: #795d64;
+}
+
+/* Hanging Polaroid photos */
+
+.hanging-photos {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: start;
+  gap: 12px;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.polaroid {
+  position: relative;
+  background: #fff;
+  padding: 9px 9px 18px;
+  box-shadow: 0 5px 15px rgba(80, 30, 40, 0.13);
+  transform: rotate(-4deg);
+}
+
+.polaroid:nth-child(2) {
+  transform: rotate(2deg);
+}
+
+.polaroid:nth-child(3) {
+  transform: rotate(-2deg);
+}
+
+.polaroid:nth-child(4) {
+  transform: rotate(4deg);
+}
+
+.polaroid::before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 60px;
+  background: #8d3448;
+  bottom: 100%;
+  left: 50%;
+}
+
+.polaroid::after {
+  content: "";
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  background: #c6a15c;
+  border-radius: 50%;
+  bottom: calc(100% + 55px);
+  left: calc(50% - 5px);
+}
+
+.polaroid img {
+  width: 100%;
+  height: clamp(100px, 24vw, 200px);
+  object-fit: cover;
+  display: block;
+}
+
+.polaroid p {
+  font-family: "Brush Script MT", cursive;
+  font-size: clamp(15px, 3vw, 25px);
+  font-style: italic;
+  color: #872640;
+  margin: 14px 0 0;
+}
+
+/* ===== SAVE THE DATE SECTION ===== */
+
+.wedding-save-date {
+  min-height: 650px;
+  padding: 90px 20px;
+  background: radial-gradient(
+    ellipse at center,
+    #801c35 0%,
+    #5a0a20 75%,
+    #430416 100%
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.save-label {
+  color: #dfbf7c;
+  font-size: 13px;
+  letter-spacing: 5px;
+}
+
+.save-number {
+  font-family: Georgia, serif;
+  font-size: clamp(150px, 35vw, 260px);
+  line-height: 1;
+  color: #dfbf7c;
+  font-weight: normal;
+}
+
+.save-month {
+  color: #fff2e9;
+  font-size: clamp(15px, 3vw, 23px);
+  letter-spacing: 5px;
+  margin: 0;
+}
+
+.save-day {
+  color: #dfbf7c;
+  font-size: 14px;
+  letter-spacing: 5px;
+  margin: 0;
+}
+
+/* Mobile layout */
+
+@media (max-width: 480px) {
+  .wedding-countdown {
+    padding: 65px 12px 85px;
+  }
+
+  .countdown-timer {
+    gap: 6px;
+    margin-bottom: 75px;
+  }
+
+  .countdown-box {
+    padding: 18px 2px;
+    border-radius: 10px;
+  }
+
+  .hanging-photos {
+    gap: 6px;
+  }
+
+  .polaroid {
+    padding: 5px 5px 13px;
+  }
+
+  .polaroid::before {
+    height: 45px;
+  }
+
+  .polaroid::after {
+    bottom: calc(100% + 40px);
+  }
+
+  .wedding-save-date {
+    min-height: 580px;
+    padding: 70px 15px;
+  }
+}
+
+/* Connect countdown boxes to hanging photos */
+
+.countdown-timer {
+  margin-bottom: 60px;
+}
+
+.hanging-photos {
+  position: relative;
+}
+
+.polaroid::before {
+  height: 60px;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.polaroid::after {
+  bottom: calc(100% + 55px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Remove gap on mobile too */
+
+@media (max-width: 480px) {
+  .countdown-timer {
+    margin-bottom: 45px;
+  }
+
+  .polaroid::before {
+    height: 45px;
+  }
+
+  .polaroid::after {
+    bottom: calc(100% + 40px);
+  }
+}
+
+/* ===== HANGING PHOTO FIX + ANIMATION ===== */
+
+/* Align countdown boxes and photos */
+.wedding-countdown .countdown-timer {
+  max-width: 850px;
+  gap: 12px;
+  margin-bottom: 60px;
+}
+
+.wedding-countdown .hanging-photos {
+  max-width: 850px;
+  gap: 12px;
+}
+
+/* Attach string to bottom of countdown box */
+.wedding-countdown .countdown-box {
+  position: relative;
+}
+
+.wedding-countdown .countdown-box::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 60px;
+  background: #8d3448;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+/* Gold pin at attachment point */
+.wedding-countdown .countdown-box::before {
+  content: "";
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #c6a15c;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+/* Remove old strings to avoid duplicates */
+.wedding-countdown .polaroid::before,
+.wedding-countdown .polaroid::after {
+  content: none;
+}
+
+/* Gentle swinging photos */
+.wedding-countdown .polaroid {
+  transform-origin: 50% -60px;
+  animation: weddingSwing 4s ease-in-out infinite alternate;
+}
+
+.wedding-countdown .polaroid:nth-child(2) {
+  animation-delay: -1s;
+}
+
+.wedding-countdown .polaroid:nth-child(3) {
+  animation-delay: -2s;
+}
+
+.wedding-countdown .polaroid:nth-child(4) {
+  animation-delay: -3s;
+}
+
+@keyframes weddingSwing {
+  from {
+    transform: rotate(-3deg);
+  }
+  to {
+    transform: rotate(3deg);
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .wedding-countdown .countdown-timer,
+  .wedding-countdown .hanging-photos {
+    gap: 6px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wedding-countdown .polaroid {
+    animation: none;
+  }
+}
+
+/* Burgundy background - Counting Down section */
+
+.wedding-countdown {
+  background: #5a0a20;
+}
+
+.wedding-countdown h2 {
+  color: #f5e4cf;
+}
+
+/* ===== CLEAN CINEMATIC ROSE PETALS ===== */
+.wedding-countdown {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Hide the older emoji petals; use the realistic PNG instead. */
+.wedding-countdown .countdown-petals {
+  display: none;
+}
+
+.wedding-countdown::before,
+.wedding-countdown::after {
+  content: "";
+  position: absolute;
+  width: clamp(200px, 30vw, 400px);
+  aspect-ratio: 1.3;
+  background: url("Images/floating-petals.png") center / contain no-repeat;
+  pointer-events: none;
+  opacity: 0.76;
+  z-index: 0;
+  filter: drop-shadow(0 10px 16px rgba(20, 0, 8, 0.22));
+}
+
+.wedding-countdown::before {
+  top: 1%;
+  left: -10%;
+  animation: petalDriftLeft 16s ease-in-out infinite alternate;
+}
+
+.wedding-countdown::after {
+  right: -10%;
+  bottom: 1%;
+  animation: petalDriftRight 19s ease-in-out infinite alternate;
+}
+
+.wedding-countdown h2,
+.wedding-countdown .countdown-timer,
+.wedding-countdown .hanging-photos {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes petalDriftLeft {
+  from { transform: translate3d(0, 0, 0) rotate(-12deg); }
+  to   { transform: translate3d(16px, 20px, 0) rotate(1deg); }
+}
+
+@keyframes petalDriftRight {
+  from { transform: translate3d(0, 0, 0) rotate(180deg); }
+  to   { transform: translate3d(-16px, -18px, 0) rotate(190deg); }
+}
+
+@media (max-width: 480px) {
+  .wedding-countdown::before,
+  .wedding-countdown::after {
+    width: 210px;
+    opacity: 0.7;
+  }
+  .wedding-countdown::before { top: -20px; left: -110px; }
+  .wedding-countdown::after { right: -110px; bottom: -20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wedding-countdown::before,
+  .wedding-countdown::after { animation: none; }
+}
+
+
+.venue-time {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 28px;
+  color: #5a0a20;
+  margin: 10px 0 25px;
+  font-weight: 500;
+}
+
+/* ===== VENUE PAGE DESIGN FIX ===== */
+
+section.venue-section {
+  min-height: 100svh;
+  width: 100%;
+  background: #fff8f1;
+  color: #5a0a20;
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.venue-section .venue-small {
+  color: #b58a52;
+  font-size: 11px;
+  letter-spacing: 3px;
+}
+
+.venue-section .venue-ornament {
+  font-size: 28px;
+  color: #c6a15c;
+  margin: 20px 0;
+}
+
+.venue-section .venue-heading {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(55px, 10vw, 85px);
+  font-weight: 400;
+  color: #5a0a20;
+  margin: 10px 0 20px;
+}
+
+.venue-section .venue-description {
+  max-width: 400px;
+  color: #866b70;
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 35px;
+}
+
+.venue-section .venue-card {
+  width: 100%;
+  max-width: 450px;
+  padding: 45px 25px;
+  background: #ffffff;
+  border: 1px solid #e5d3b8;
+  border-radius: 14px;
+  box-shadow: 0 15px 40px rgba(60, 10, 25, 0.08);
+  text-align: center;
+}
+
+.venue-section .venue-label {
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: #b58a52;
+  margin-bottom: 12px;
+}
+
+.venue-section .venue-card h3 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 32px;
+  font-weight: 500;
+  color: #5a0a20;
+  margin-bottom: 20px;
+}
+
+.venue-section .venue-time {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 29px;
+  color: #5a0a20;
+  margin-bottom: 25px;
+}
+
+.venue-section .venue-divider {
+  width: 70px;
+  height: 1px;
+  background: #c6a15c;
+  margin: 30px auto;
+}
+
+.venue-section .venue-address {
+  color: #866b70;
+  font-size: 13px;
+  line-height: 2;
+  margin-bottom: 30px;
+}
+
+.venue-section a.venue-button {
+  display: inline-block;
+  padding: 15px 32px;
+  background: #5a0a20;
+  color: #fff8ef;
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 11px;
+  letter-spacing: 2px;
+  transition: 0.3s;
+}
+
+.venue-section a.venue-button:hover {
+  background: #872640;
+}
+
+.venue-section .venue-bottom {
+  margin-top: 40px;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: 24px;
+  color: #866b70;
+}
+
+@media (max-width: 480px) {
+  section.venue-section {
+    padding: 65px 18px;
+  }
+
+  .venue-section .venue-card {
+    padding: 35px 20px;
+  }
+
+  .venue-section .venue-card h3 {
+    font-size: 29px;
+  }
+}
+
+/* ===== THANK YOU PAGE FIX ===== */
+
+section.thankyou-section {
+  min-height: 100svh;
+  width: 100%;
+  padding: 90px 24px;
+  background: radial-gradient(
+    ellipse at center,
+    #741a32 0%,
+    #5a0a20 55%,
+    #35000c 100%
+  );
+  color: #fff3e5;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.thankyou-section .thankyou-content {
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.thankyou-section .thankyou-ornament {
+  color: #d6b77c;
+  font-size: 32px;
+  margin-bottom: 35px;
+}
+
+.thankyou-section .thankyou-small {
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: #d6b77c;
+  margin-bottom: 25px;
+}
+
+.thankyou-section h2 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(75px, 13vw, 120px);
+  font-weight: 400;
+  color: #fff3e5;
+  margin: 0 0 25px;
+  line-height: 1;
+}
+
+.thankyou-section .thankyou-line {
+  width: 80px;
+  height: 1px;
+  background: #d6b77c;
+  margin: 30px auto;
+}
+
+.thankyou-section .thankyou-message {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(20px, 4vw, 26px);
+  line-height: 1.8;
+  color: #f2dfe1;
+}
+
+.thankyou-section .thankyou-withlove {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: 23px;
+  color: #d6b77c;
+  margin-top: 45px;
+}
+
+.thankyou-section h3 {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(45px, 9vw, 70px);
+  font-weight: 400;
+  color: #fff0df;
+  margin: 20px 0;
+}
+
+.thankyou-section .thankyou-date {
+  font-size: 11px;
+  letter-spacing: 4px;
+  color: #d6b77c;
+  margin-top: 25px;
+}
+
+.thankyou-section .thankyou-bottom {
+  font-size: 35px;
+  color: #d6b77c;
+  margin-top: 35px;
+}
+
+@media (max-width: 480px) {
+  section.thankyou-section {
+    padding: 70px 18px;
+  }
+
+  .thankyou-section .thankyou-message {
+    font-size: 21px;
+  }
+
+  .thankyou-section h2 {
+    font-size: 75px;
+  }
+}
+
+/* Arabic heading */
+
+.thankyou-section h2.thankyou-arabic {
+  font-family: 'Amiri', serif;
+  font-size: clamp(65px, 10vw, 115px);
+  font-weight: 400;
+  line-height: 1.6;
+  color: #fff3e5;
+  text-align: center;
+  direction: rtl;
+  margin: 0 auto 25px;
+}
+
+/* Family names */
+
+.thankyou-section h3.thankyou-family {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 500;
+  line-height: 1.3;
+  color: #fff0df;
+  text-align: center;
+  margin: 20px auto;
+}
+
+.thankyou-family span {
+  display: block;
+  font-size: 0.75em;
+  font-style: italic;
+  color: #d6b77c;
+  margin-top: 8px;
+}
+
+.arabic-bismillah {
+  font-family: 'Amiri', serif;
+  font-size: clamp(65px, 10vw, 110px);
+  color: #fff3e5;
+  text-align: center;
+  direction: rtl;
+  margin: 20px auto;
+}

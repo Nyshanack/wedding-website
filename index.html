@@ -1,0 +1,408 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>Rashikh & Nyshana | Wedding Invitation</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Amiri:wght@400;700&display=swap"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- =====================================
+       PAGE 1 - OPENING COVER
+  ====================================== -->
+
+  <div class="cover" id="cover">
+
+    <div class="cover-inner">
+
+      <img
+        src="Images/wedding-cover.png"
+        class="cover-image"
+        alt="Wedding invitation cover"
+      >
+
+      <button
+        class="ring-button"
+        id="openRing"
+        aria-label="Open invitation">
+
+        <img
+          src="Images/silver-ring-once.webp"
+          class="ring-image"
+          alt="Silver diamond ring"
+        >
+
+      </button>
+
+      <p class="tap-text">TAP TO OPEN</p>
+
+    </div>
+
+  </div>
+
+
+  <!-- MAIN WEDDING WEBSITE -->
+
+  <main id="mainContent">
+
+
+    <!-- =====================================
+         PAGE 2 - WEDDING INVITATION
+    ====================================== -->
+
+
+<section class="section hero invitation-intro">
+  <img
+    src="Images/second-page.png"
+    alt="Wedding invitation"
+    class="second-page-image"
+  >
+</section>
+    <!-- =====================================
+         PAGE 3 - SCRATCH AND REVEAL
+    ====================================== -->
+
+    <section
+      class="section scratch-section"
+      id="scratchSection">
+
+      <p class="eyebrow">
+        A LITTLE SURPRISE
+      </p>
+
+      <h2>Reveal the Day</h2>
+
+      <p class="scratch-instruction">
+        Scratch each card to reveal our special date
+      </p>
+
+      <div class="scratch-grid">
+
+        <!-- DAY -->
+
+        <div class="scratch-card">
+
+          <div class="scratch-answer">
+            <strong>21</strong>
+            <span>DAY</span>
+          </div>
+
+          <canvas
+            class="scratch-canvas"
+            aria-label="Scratch to reveal the day">
+          </canvas>
+
+        </div>
+
+
+        <!-- MONTH -->
+
+        <div class="scratch-card">
+
+          <div class="scratch-answer">
+            <strong>DEC</strong>
+            <span>MONTH</span>
+          </div>
+
+          <canvas
+            class="scratch-canvas"
+            aria-label="Scratch to reveal the month">
+          </canvas>
+
+        </div>
+
+
+        <!-- YEAR -->
+
+        <div class="scratch-card">
+
+          <div class="scratch-answer">
+            <strong>2026</strong>
+            <span>YEAR</span>
+          </div>
+
+          <canvas
+            class="scratch-canvas"
+            aria-label="Scratch to reveal the year">
+          </canvas>
+
+        </div>
+
+      </div>
+
+      <p class="scratch-footer">
+        Until we say, “I do.”
+      </p>
+
+    </section>
+
+
+    <!-- =====================================
+         PAGE 4 - COUNTING DOWN
+    ====================================== -->
+
+    <section class="wedding-countdown">
+
+      <div
+        class="countdown-petals"
+        aria-hidden="true">
+
+        <span>🌹</span>
+        <span>🌹</span>
+        <span>🌹</span>
+        <span>🌹</span>
+        <span>🌹</span>
+        <span>🌹</span>
+
+      </div>
+
+      <h2>Counting Down</h2>
+
+
+      <!-- COUNTDOWN TIMER -->
+
+      <div class="countdown-timer">
+
+        <div class="countdown-box">
+          <strong id="wDays">0</strong>
+          <span>DAYS</span>
+        </div>
+
+        <div class="countdown-box">
+          <strong id="wHours">0</strong>
+          <span>HOURS</span>
+        </div>
+
+        <div class="countdown-box">
+          <strong id="wMinutes">0</strong>
+          <span>MINUTES</span>
+        </div>
+
+        <div class="countdown-box">
+          <strong id="wSeconds">0</strong>
+          <span>SECONDS</span>
+        </div>
+
+      </div>
+
+
+      <!-- HANGING POLAROID PHOTOS -->
+
+      <div class="hanging-photos">
+
+        <div class="polaroid">
+
+          <img
+            src="Images/KEY02400.jpg"
+            alt="Our hands"
+          >
+
+          <p>Together</p>
+
+        </div>
+
+
+        <div class="polaroid">
+
+          <img
+            src="Images/KEY01875.jpg"
+            alt="Walking together"
+          >
+
+          <p>Forever</p>
+
+        </div>
+
+
+        <div class="polaroid">
+
+          <img
+            src="Images/KEY01735.jpg"
+            alt="Our memories"
+          >
+
+          <p>Always</p>
+
+        </div>
+
+
+        <div class="polaroid">
+
+          <img
+            src="Images/bg.jpg"
+            alt="Our love"
+          >
+
+          <p>Blessed</p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         PAGE 5 - WEDDING VENUE
+    ====================================== -->
+
+    <section class="venue-section">
+
+      <p class="venue-small">
+        THE WEDDING CELEBRATION
+      </p>
+
+      <div class="venue-ornament">✦</div>
+
+      <h2 class="venue-heading">
+        The Venue
+      </h2>
+
+      <p class="venue-description">
+        Join us as we celebrate our special day.
+      </p>
+
+
+      <div class="venue-card">
+
+        <p class="venue-label">
+          SAVE THE DATE
+        </p>
+
+        <h3>21 December 2026</h3>
+
+
+        <p class="venue-label">
+          WEDDING TIME
+        </p>
+
+        <p class="venue-time">
+          10:00 AM – 4:00 PM
+        </p>
+
+
+        <div class="venue-divider"></div>
+
+
+        <p class="venue-label">
+          WEDDING VENUE
+        </p>
+
+        <h3>The Zerai Resort</h3>
+
+        <p class="venue-address">
+          Elettil – Parappan Poyil Rd,<br>
+          Elettil, Kizhakkoth,<br>
+          Kerala, India
+        </p>
+
+
+        <a
+          href="https://share.google/NfipKptUl3BRcYAw2"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="venue-button">
+
+          GET DIRECTIONS
+
+        </a>
+
+      </div>
+
+
+      <p class="venue-bottom">
+        Your presence will make our day
+        even more beautiful.
+      </p>
+
+    </section>
+
+
+    <!-- =====================================
+         PAGE 6 - THANK YOU
+    ====================================== -->
+
+    <section class="thankyou-section">
+
+      <div class="thankyou-content">
+
+        <div class="thankyou-ornament">
+          ✦
+        </div>
+
+        <p class="thankyou-small">
+          WITH LOVE AND GRATITUDE
+        </p>
+
+       
+<h2 class="thankyou-arabic" lang="ar" dir="rtl">
+  إِنْ شَاءَ اللَّهُ
+</h2>
+
+
+        <div class="thankyou-line"></div>
+
+
+        <p class="thankyou-message">
+          Every beautiful moment becomes
+          more meaningful when shared
+          with the people we love.
+
+          <br><br>
+
+          Thank you for being a part
+          of our special journey
+          and celebrating our love.
+        </p>
+
+
+        <p class="thankyou-withlove">
+          With all our love,
+        </p>
+
+        
+
+
+<h3 class="thankyou-family">
+  <span class="family-name">Mr. Sulaiman</span>
+  <span class="family-ampersand">&amp;</span>
+  <span class="family-name">Mrs. Maimoonath</span>
+  <span class="family-label">and Family</span>
+</h3>
+
+
+
+        <p class="thankyou-date">
+          21 · 12 · 2026
+        </p>
+
+        <div class="thankyou-bottom">
+          ♡
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+  <!-- JAVASCRIPT -->
+
+  <script src="script.js"></script>
+
+</body>
+</html>
+
+
